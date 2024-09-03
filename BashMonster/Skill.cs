@@ -9,6 +9,5 @@ public class karaktär
 {
     public int hälsa = 100;
     public int attack = 10;
-    public string namn = "Karaktär";
 }
 
