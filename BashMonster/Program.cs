@@ -16,19 +16,29 @@ while (theKaraktär.hälsa > 0)
     {
         while (theKaraktär.hälsa > 0 && theFiende.hälsa > 0)
         {
+            Console.Clear();
+
             Console.WriteLine($"{namn} har {theKaraktär.hälsa} hälsa");
             Console.WriteLine($"{theFiende.namn} har {theFiende.hälsa} hälsa");
+            Console.WriteLine();
             
             Console.WriteLine("Vad Vill du göra");
             Console.WriteLine("1. attackera");
             Console.WriteLine("2. spring iväg");
             string alternativ = Console.ReadLine();
+            Console.WriteLine();
 
             if (alternativ == "1")
             {
                 Console.WriteLine("ATTACK!");
-                theFiende.hälsa -= 10;
+                theFiende.hälsa -= theKaraktär.attack;
                 Console.WriteLine($"{theFiende.namn} har {theFiende.hälsa} hälsa");
+                Console.WriteLine();
+
+                Console.WriteLine("Monstret attackarer tillbacka");
+                theKaraktär.hälsa -= theFiende.attack;
+                Console.WriteLine($"{namn} har {theKaraktär.hälsa} hälsa");
+                Console.WriteLine();
 
                 Console.WriteLine("Tryck för att fortsätta");
                 Console.ReadKey();
